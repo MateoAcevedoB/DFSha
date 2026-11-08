@@ -233,9 +233,9 @@ El proyecto incluye soporte nativo para **AWS Academy Learner Lab**:
 
 **Equipo de Desarrollo — Sistemas Distribuidos 2026-2:**
 
-- **Mateo Acevedo B.**: Implementación de arquitectura cliente/servidor, orquestación de Docker Compose, despliegue en AWS Academy EC2, infraestructura PKI dinámica y benchmarks WAN.
-- **David**: Diseño arquitectónico de colocación por Hashing de Rendezvous, semántica de sesión *close-to-open* y fusión de bloques por versiones.
-- **Juan José**: Integración de adaptadores de almacenamiento distribuido etcd, esquemas de autorización JWT y control de concurrencia optimista (CAS).
+- **Mateo Acevedo Bedoya**: Implementación de arquitectura cliente/servidor, orquestación de Docker Compose, despliegue en AWS Academy EC2, infraestructura PKI dinámica y benchmarks WAN.
+- **David Vallejo Garcia**: Diseño arquitectónico de colocación por Hashing de Rendezvous, semántica de sesión *close-to-open* y fusión de bloques por versiones.
+- **Juan Jose Arango Ocampo**: Integración de adaptadores de almacenamiento distribuido etcd, esquemas de autorización JWT y control de concurrencia optimista (CAS).
 
 ---
 
