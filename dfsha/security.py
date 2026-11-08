@@ -21,4 +21,5 @@ def tls_context():
     return context
 
 def node_url(node):
-    return ('https' if os.getenv('TLS_CA') else 'http') + f'://{node}:8000'
+    port = os.getenv(f'DFSHA_PORT_{node.upper()}', '8000')
+    return ('https' if os.getenv('TLS_CA') else 'http') + f'://{node}:{port}'
