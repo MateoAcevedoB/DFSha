@@ -1,0 +1,629 @@
+{
+  "name": "dfsha5",
+  "services": {
+    "etcd1": {
+      "image": "gcr.io/etcd-development/etcd:v3.5.21",
+      "entrypoint": "/usr/local/bin/etcd",
+      "environment": {
+        "ETCD_NAME": "etcd1",
+        "ETCD_DATA_DIR": "/etcd-data",
+        "ETCD_LISTEN_CLIENT_URLS": "https://0.0.0.0:2379",
+        "ETCD_LISTEN_PEER_URLS": "https://0.0.0.0:2380",
+        "ETCD_ADVERTISE_CLIENT_URLS": "https://etcd1:2379",
+        "ETCD_INITIAL_ADVERTISE_PEER_URLS": "https://etcd1:2380",
+        "ETCD_INITIAL_CLUSTER": "etcd1=https://etcd1:2380,etcd2=https://etcd2:2380,etcd3=https://etcd3:2380",
+        "ETCD_INITIAL_CLUSTER_STATE": "new",
+        "ETCD_INITIAL_CLUSTER_TOKEN": "dfsha5-secure",
+        "ETCD_CERT_FILE": "/tls/server.crt",
+        "ETCD_KEY_FILE": "/tls/server.key",
+        "ETCD_TRUSTED_CA_FILE": "/trust/ca.crt",
+        "ETCD_CLIENT_CERT_AUTH": "true",
+        "ETCD_PEER_CERT_FILE": "/tls/server.crt",
+        "ETCD_PEER_KEY_FILE": "/tls/server.key",
+        "ETCD_PEER_TRUSTED_CA_FILE": "/trust/ca.crt",
+        "ETCD_PEER_CLIENT_CERT_AUTH": "true",
+        "ETCD_TLS_MIN_VERSION": "TLS1.3"
+      },
+      "volumes": [
+        "./runtime/tls/etcd1:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "etcd1:/etcd-data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "/usr/local/bin/etcdctl",
+          "--endpoints=https://localhost:2379",
+          "--cacert=/trust/ca.crt",
+          "--cert=/tls/server.crt",
+          "--key=/tls/server.key",
+          "endpoint",
+          "health"
+        ],
+        "interval": "5s",
+        "timeout": "4s",
+        "retries": 30
+      }
+    },
+    "etcd2": {
+      "image": "gcr.io/etcd-development/etcd:v3.5.21",
+      "entrypoint": "/usr/local/bin/etcd",
+      "environment": {
+        "ETCD_NAME": "etcd2",
+        "ETCD_DATA_DIR": "/etcd-data",
+        "ETCD_LISTEN_CLIENT_URLS": "https://0.0.0.0:2379",
+        "ETCD_LISTEN_PEER_URLS": "https://0.0.0.0:2380",
+        "ETCD_ADVERTISE_CLIENT_URLS": "https://etcd2:2379",
+        "ETCD_INITIAL_ADVERTISE_PEER_URLS": "https://etcd2:2380",
+        "ETCD_INITIAL_CLUSTER": "etcd1=https://etcd1:2380,etcd2=https://etcd2:2380,etcd3=https://etcd3:2380",
+        "ETCD_INITIAL_CLUSTER_STATE": "new",
+        "ETCD_INITIAL_CLUSTER_TOKEN": "dfsha5-secure",
+        "ETCD_CERT_FILE": "/tls/server.crt",
+        "ETCD_KEY_FILE": "/tls/server.key",
+        "ETCD_TRUSTED_CA_FILE": "/trust/ca.crt",
+        "ETCD_CLIENT_CERT_AUTH": "true",
+        "ETCD_PEER_CERT_FILE": "/tls/server.crt",
+        "ETCD_PEER_KEY_FILE": "/tls/server.key",
+        "ETCD_PEER_TRUSTED_CA_FILE": "/trust/ca.crt",
+        "ETCD_PEER_CLIENT_CERT_AUTH": "true",
+        "ETCD_TLS_MIN_VERSION": "TLS1.3"
+      },
+      "volumes": [
+        "./runtime/tls/etcd2:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "etcd2:/etcd-data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "/usr/local/bin/etcdctl",
+          "--endpoints=https://localhost:2379",
+          "--cacert=/trust/ca.crt",
+          "--cert=/tls/server.crt",
+          "--key=/tls/server.key",
+          "endpoint",
+          "health"
+        ],
+        "interval": "5s",
+        "timeout": "4s",
+        "retries": 30
+      }
+    },
+    "etcd3": {
+      "image": "gcr.io/etcd-development/etcd:v3.5.21",
+      "entrypoint": "/usr/local/bin/etcd",
+      "environment": {
+        "ETCD_NAME": "etcd3",
+        "ETCD_DATA_DIR": "/etcd-data",
+        "ETCD_LISTEN_CLIENT_URLS": "https://0.0.0.0:2379",
+        "ETCD_LISTEN_PEER_URLS": "https://0.0.0.0:2380",
+        "ETCD_ADVERTISE_CLIENT_URLS": "https://etcd3:2379",
+        "ETCD_INITIAL_ADVERTISE_PEER_URLS": "https://etcd3:2380",
+        "ETCD_INITIAL_CLUSTER": "etcd1=https://etcd1:2380,etcd2=https://etcd2:2380,etcd3=https://etcd3:2380",
+        "ETCD_INITIAL_CLUSTER_STATE": "new",
+        "ETCD_INITIAL_CLUSTER_TOKEN": "dfsha5-secure",
+        "ETCD_CERT_FILE": "/tls/server.crt",
+        "ETCD_KEY_FILE": "/tls/server.key",
+        "ETCD_TRUSTED_CA_FILE": "/trust/ca.crt",
+        "ETCD_CLIENT_CERT_AUTH": "true",
+        "ETCD_PEER_CERT_FILE": "/tls/server.crt",
+        "ETCD_PEER_KEY_FILE": "/tls/server.key",
+        "ETCD_PEER_TRUSTED_CA_FILE": "/trust/ca.crt",
+        "ETCD_PEER_CLIENT_CERT_AUTH": "true",
+        "ETCD_TLS_MIN_VERSION": "TLS1.3"
+      },
+      "volumes": [
+        "./runtime/tls/etcd3:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "etcd3:/etcd-data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "/usr/local/bin/etcdctl",
+          "--endpoints=https://localhost:2379",
+          "--cacert=/trust/ca.crt",
+          "--cert=/tls/server.crt",
+          "--key=/tls/server.key",
+          "endpoint",
+          "health"
+        ],
+        "interval": "5s",
+        "timeout": "4s",
+        "retries": 30
+      }
+    },
+    "cn1": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "cn1",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "JWT_SECRET_FILE": "/secrets/jwt.key",
+        "FILE_MASTER_KEY_FILE": "/secrets/master.key",
+        "ROLE": "cn"
+      },
+      "volumes": [
+        "./runtime/tls/cn1:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt:/secrets/receipts:ro",
+        "./runtime/secrets/jwt.key:/secrets/jwt.key:ro",
+        "./runtime/secrets/master.key:/secrets/master.key:ro"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/ready',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "cn2": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "cn2",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "JWT_SECRET_FILE": "/secrets/jwt.key",
+        "FILE_MASTER_KEY_FILE": "/secrets/master.key",
+        "ROLE": "cn"
+      },
+      "volumes": [
+        "./runtime/tls/cn2:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt:/secrets/receipts:ro",
+        "./runtime/secrets/jwt.key:/secrets/jwt.key:ro",
+        "./runtime/secrets/master.key:/secrets/master.key:ro"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/ready',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "cn3": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "cn3",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "JWT_SECRET_FILE": "/secrets/jwt.key",
+        "FILE_MASTER_KEY_FILE": "/secrets/master.key",
+        "ROLE": "cn"
+      },
+      "volumes": [
+        "./runtime/tls/cn3:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt:/secrets/receipts:ro",
+        "./runtime/secrets/jwt.key:/secrets/jwt.key:ro",
+        "./runtime/secrets/master.key:/secrets/master.key:ro"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/ready',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "dn1": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "dn1",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "ROLE": "dn"
+      },
+      "volumes": [
+        "./runtime/tls/dn1:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt/dn1.key:/secrets/receipts/dn1.key:ro",
+        "dn1:/data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/live',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "dn2": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "dn2",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "ROLE": "dn"
+      },
+      "volumes": [
+        "./runtime/tls/dn2:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt/dn2.key:/secrets/receipts/dn2.key:ro",
+        "dn2:/data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/live',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "dn3": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "dn3",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "ROLE": "dn"
+      },
+      "volumes": [
+        "./runtime/tls/dn3:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt/dn3.key:/secrets/receipts/dn3.key:ro",
+        "dn3:/data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/live',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "dn4": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.serve"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "dn4",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "ROLE": "dn"
+      },
+      "volumes": [
+        "./runtime/tls/dn4:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt/dn4.key:/secrets/receipts/dn4.key:ro",
+        "dn4:/data"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "python",
+          "-c",
+          "import httpx; from dfsha.security import tls_context; httpx.get('https://localhost:8000/health/live',verify=tls_context(),timeout=12).raise_for_status()"
+        ],
+        "interval": "10s",
+        "timeout": "15s",
+        "retries": 20
+      }
+    },
+    "repair": {
+      "build": ".",
+      "command": [
+        "python",
+        "-u",
+        "-m",
+        "dfsha.repair"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "repair",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts"
+      },
+      "volumes": [
+        "./runtime/tls/repair:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt:/secrets/receipts:ro"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "restart": "unless-stopped"
+    },
+    "maintenance": {
+      "build": ".",
+      "command": [
+        "python",
+        "-m",
+        "dfsha.gc"
+      ],
+      "environment": {
+        "TLS_CA": "/trust/ca.crt",
+        "TLS_CERT": "/tls/server.crt",
+        "TLS_KEY": "/tls/server.key",
+        "CAPABILITY_SECRET_FILE": "/secrets/capability.key",
+        "NODE_ID": "maintenance",
+        "ETCD_ENDPOINTS": "https://etcd1:2379,https://etcd2:2379,https://etcd3:2379",
+        "RECEIPT_KEYS_DIR": "/secrets/receipts",
+        "JWT_SECRET_FILE": "/secrets/jwt.key",
+        "FILE_MASTER_KEY_FILE": "/secrets/master.key"
+      },
+      "volumes": [
+        "./runtime/tls/maintenance:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./runtime/secrets/capability.key:/secrets/capability.key:ro",
+        "./runtime/secrets/receipt:/secrets/receipts:ro",
+        "./runtime/secrets/jwt.key:/secrets/jwt.key:ro",
+        "./runtime/secrets/master.key:/secrets/master.key:ro"
+      ],
+      "networks": [
+        "private"
+      ],
+      "depends_on": {
+        "etcd1": {
+          "condition": "service_healthy"
+        },
+        "etcd2": {
+          "condition": "service_healthy"
+        },
+        "etcd3": {
+          "condition": "service_healthy"
+        }
+      },
+      "profiles": [
+        "maintenance"
+      ]
+    },
+    "gateway": {
+      "image": "nginx:1.28-alpine",
+      "ports": [
+        "127.0.0.1:18443:443"
+      ],
+      "volumes": [
+        "./runtime/tls/gateway:/tls:ro",
+        "./runtime/trust:/trust:ro",
+        "./nginx.conf:/etc/nginx/conf.d/default.conf:ro"
+      ],
+      "networks": [
+        "private",
+        "access"
+      ],
+      "depends_on": {
+        "cn1": {
+          "condition": "service_healthy"
+        },
+        "cn2": {
+          "condition": "service_healthy"
+        },
+        "cn3": {
+          "condition": "service_healthy"
+        }
+      }
+    }
+  },
+  "networks": {
+    "private": {
+      "internal": true
+    },
+    "access": {}
+  },
+  "volumes": {
+    "etcd1": {},
+    "etcd2": {},
+    "etcd3": {},
+    "dn1": {},
+    "dn2": {},
+    "dn3": {},
+    "dn4": {}
+  }
+}
