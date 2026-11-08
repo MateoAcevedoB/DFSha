@@ -190,6 +190,8 @@ El proyecto incluye soporte nativo para **AWS Academy Learner Lab**:
 
 *(Consulta la [Guía Detallada de AWS](docs/GUIA_DESPLIEGUE_AWS.md) para instrucciones paso a paso).*
 
+Para repetir la prueba con un nodo de datos en otra instancia, consulta la [guía de despliegue en dos EC2](docs/DESPLIEGUE_AWS_DOS_EC2.md) y la [evidencia de recuperación en AWS Academy](evidencias/DFSha-evidencia-AWS.md).
+
 ---
 
 ## 📊 Resultados y Evidencias Experimentales
