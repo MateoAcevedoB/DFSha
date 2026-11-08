@@ -1,0 +1,12 @@
+{
+  "large_mib": 1024,
+  "environment": "Docker local, red TLS/mTLS",
+  "mtls_without_certificate_rejected": true,
+  "rf3_disjoint_merge_and_same_block_conflict": true,
+  "bytes": 1073741824,
+  "blocks": 256,
+  "sha256": "4890d76fcfb17558cb4298d68e752e733bf0f2ce2dbea31760c3a01f3fae8475",
+  "put_s": 55.38044071600052,
+  "get_s": 31.05821577200004,
+  "verified": true
+}

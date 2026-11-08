@@ -1,0 +1,2 @@
+condition,size_mib,clients,repeat,worker,put_s,get_s,put_mib_s,get_mib_s,round_wall_s,sha256,verified
+dn1_detenido,4,1,0,0,1.312405699998635,1.0033511000001454,3.047838027527738,3.986640369457332,2.317024300000412,58ab4a69bb1cf0fd76f1e9f8a9d1089d340af9ccd9833a978e5a5b656c558d89,True

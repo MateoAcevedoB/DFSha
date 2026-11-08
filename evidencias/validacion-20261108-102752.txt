@@ -1,0 +1,686 @@
+﻿**********************
+Inicio de la transcripción de Windows PowerShell
+Hora de inicio: 20261108102752
+Nombre de usuario: MAB\teoac
+Usuario RunAs: MAB\teoac
+Nombre de la configuración: 
+Máquina: MAB (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Id. de proceso: 35208
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+29.4.2
+CPU=12 RAM_bytes=16616988672 Driver=overlayfs OS=Docker Desktop
+ Image dfsha5-cn3 Building
+ Image dfsha5-repair Building
+ Image dfsha5-dn2 Building
+ Image dfsha5-cn1 Building
+ Image dfsha5-dn3 Building
+ Image dfsha5-dn4 Building
+ Image dfsha5-maintenance Building
+ Image dfsha5-cn2 Building
+ Image dfsha5-dn1 Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 5.35kB 0.0s done
+#1 DONE 0.0s
+
+#2 [dn1 internal] load build definition from Dockerfile
+#2 transferring dockerfile: 377B 0.0s done
+#2 DONE 0.0s
+
+#3 [dn2 internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 0.1s
+
+#4 [dn2 internal] load .dockerignore
+#4 transferring context: 111B done
+#4 DONE 0.0s
+
+#5 [cn1 1/8] FROM docker.io/library/python:3.12-slim@sha256:4840d514c583a4d3d8cad3940e68dee6f0f6f3635c12fcd0a3d74c21a5b93a54
+#5 resolve docker.io/library/python:3.12-slim@sha256:4840d514c583a4d3d8cad3940e68dee6f0f6f3635c12fcd0a3d74c21a5b93a54 0.0s done
+#5 DONE 0.0s
+
+#6 [repair internal] load build context
+#6 transferring context: 13.17kB 0.0s done
+#6 DONE 0.0s
+
+#7 [cn3 2/8] WORKDIR /app
+#7 CACHED
+
+#8 [cn3 3/8] COPY requirements.lock .
+#8 CACHED
+
+#9 [cn3 4/8] RUN pip install --no-cache-dir -r requirements.lock
+#9 CACHED
+
+#10 [cn3 5/8] COPY dfsha ./dfsha
+#10 CACHED
+
+#7 [cn1 2/8] WORKDIR /app
+#7 CACHED
+
+#8 [cn1 3/8] COPY requirements.lock .
+#8 CACHED
+
+#9 [cn1 4/8] RUN pip install --no-cache-dir -r requirements.lock
+#9 CACHED
+
+#11 [dn1 6/8] COPY tests ./tests
+#11 DONE 0.0s
+
+#12 [cn2 7/8] COPY scripts ./scripts
+#12 DONE 0.0s
+
+#13 [maintenance 8/8] RUN mkdir -p /data && chown 10001:10001 /data
+#13 DONE 0.3s
+
+#14 [cn2] exporting to image
+#14 exporting layers
+#14 exporting layers 0.2s done
+#14 exporting manifest sha256:592295f915c422b7a08766309ae8bab88cba6c567feb61d65e0d003197092203 0.1s done
+#14 exporting config sha256:fff556798d5c33b6ca2f4ab6237f928a3354ce8c9533620fe2b64b6bd1e98040
+#14 exporting config sha256:fff556798d5c33b6ca2f4ab6237f928a3354ce8c9533620fe2b64b6bd1e98040 0.1s done
+#14 exporting attestation manifest sha256:c99db02eff02d4d5dfad6949b01313520580eff363b22c9f4d0c302e391c025c
+#14 exporting attestation manifest sha256:c99db02eff02d4d5dfad6949b01313520580eff363b22c9f4d0c302e391c025c 0.2s done
+#14 exporting manifest list sha256:855842403e725ee20b46174f9d5f30f8b9ebeab8c778b110c492bbb770c51829
+#14 exporting manifest list sha256:855842403e725ee20b46174f9d5f30f8b9ebeab8c778b110c492bbb770c51829 0.1s done
+#14 naming to docker.io/library/dfsha5-cn2:latest 0.0s done
+#14 unpacking to docker.io/library/dfsha5-cn2:latest
+#14 ...
+
+#15 [dn4] exporting to image
+#15 exporting layers 0.2s done
+#15 exporting manifest sha256:34bf43f28075ad9f8bf2c619e9ed01975cc976c9801e674fb31c0e72c465f843 0.1s done
+#15 exporting config sha256:9e57541cff40af0c86db66bbda3843b1239fa3b15849b98cc2fb42593f4d6b05 0.1s done
+#15 exporting attestation manifest sha256:95e78ccbc5e344ab8cfbbf8f123d60749e4d461d414e1575153ab2f21a6e5ff1 0.2s done
+#15 exporting manifest list sha256:82463ecfd7b616d1a2b9bc09047bba0bf28a6e9a1be12a50519241bb16a5da94 0.1s done
+#15 naming to docker.io/library/dfsha5-dn4:latest 0.0s done
+#15 unpacking to docker.io/library/dfsha5-dn4:latest 0.1s done
+#15 DONE 1.0s
+
+#16 [repair] exporting to image
+#16 exporting layers 0.2s done
+#16 exporting manifest sha256:8fa36848e8d18028dddb9ca0ea2637f6d147a3fbc63a9d6124802b96a022c1e7 0.1s done
+#16 exporting config sha256:d091c5c1140b582ba629c927f6f60b9415252cf4d047cbed521b814be0483a44 0.1s done
+#16 exporting attestation manifest sha256:b19a8a29beede57183e879ebbd445b3903cdfb49a3e84c8e18b4b3d3a9734225 0.2s done
+#16 exporting manifest list sha256:b41f021da6778b56fb09c2e905354ba80a5653713a2da41ce9b041ba9201dd29 0.1s done
+#16 naming to docker.io/library/dfsha5-repair:latest 0.0s done
+#16 unpacking to docker.io/library/dfsha5-repair:latest 0.1s done
+#16 DONE 1.0s
+
+#14 [cn2] exporting to image
+#14 unpacking to docker.io/library/dfsha5-cn2:latest 0.1s done
+#14 DONE 1.0s
+
+#17 [dn1] exporting to image
+#17 exporting layers 0.2s done
+#17 exporting manifest sha256:0b713e471f7199faff07f9c1c0fd462129a75d152c56089b8475aa613f6700c2 0.1s done
+#17 exporting config sha256:7919c66219dd39d39fa9930848a35e05fa85253c0498fb655767a0e4a19de82a 0.1s done
+#17 exporting attestation manifest sha256:8cda8b0c410960fcf0f0b899576fe71bcbad93629a3f8391a9a075ede4105b5b 0.2s done
+#17 exporting manifest list sha256:405c3dd9aa4cc81ac485acb3b41ffe4058df5df3fa8dfbc58d0e979b37526a41 0.1s done
+#17 naming to docker.io/library/dfsha5-dn1:latest 0.0s done
+#17 unpacking to docker.io/library/dfsha5-dn1:latest 0.1s done
+#17 DONE 1.0s
+
+#18 [dn3] exporting to image
+#18 exporting layers 0.2s done
+#18 exporting manifest sha256:20c13d8cf0e2b583edf35658c94d714c3b7af50d8cdd7f5e9ec320badaee9474 0.1s done
+#18 exporting config sha256:26b9dd0cc6ce9fc547693f9e00426164a2222a08fe92037b7f473767d6e9b383 0.1s done
+#18 exporting attestation manifest sha256:85a8cd8fe639beb7c6204a08047c49de32bdefa554095f03cfebb211a30db3a0 0.2s done
+#18 exporting manifest list sha256:93d414d212b058323d8c53c1412a6b9424a07cc95c5627d84d2e329a14d0c38b 0.1s done
+#18 naming to docker.io/library/dfsha5-dn3:latest 0.0s done
+#18 unpacking to docker.io/library/dfsha5-dn3:latest 0.2s done
+#18 DONE 1.0s
+
+#19 [cn3] exporting to image
+#19 exporting layers 0.2s done
+#19 exporting manifest sha256:33b7fb7d38125de6aefebe005aef63be5340b3adbc5dfa269969486f6d1958e1 0.1s done
+#19 exporting config sha256:fbcb7952cff63500a5ebc06e638109de29c9ff6ce806c34a6120b456c8449d84 0.1s done
+#19 exporting attestation manifest sha256:97f0fe472a4e9d7f758dfccdfc20838745e78ec6433ffa16b26160ba953a73ff 0.2s done
+#19 exporting manifest list sha256:fbd31b4422fddb6f422c181805bccc3ed7c9801285506e72bc83f1e8f83c49b5 0.1s done
+#19 naming to docker.io/library/dfsha5-cn3:latest 0.0s done
+#19 unpacking to docker.io/library/dfsha5-cn3:latest 0.1s done
+#19 DONE 1.0s
+
+#20 [maintenance] exporting to image
+#20 exporting layers 0.2s done
+#20 exporting manifest sha256:ffaf647268a2b066fa17a5b0c9da7807ccdc3dd75db1f9c90fa8bf82eb1e5cde 0.1s done
+#20 exporting config sha256:52261e386a8c2c705f4e07e57debab333aa26e848902bb64cddaebb061a8486d 0.1s done
+#20 exporting attestation manifest sha256:ec1d5c22491599cb55b66fc88b463834e5c978d3c9e866f667e1acf72803b043 0.2s done
+#20 exporting manifest list sha256:3c4df8ff5051d82f40d7f8c148efea73e0db020d04d9f56db087320a530cd6c9 0.1s done
+#20 naming to docker.io/library/dfsha5-maintenance:latest 0.0s done
+#20 unpacking to docker.io/library/dfsha5-maintenance:latest 0.2s done
+#20 DONE 1.1s
+
+#21 [cn1] exporting to image
+#21 exporting layers 0.2s done
+#21 exporting manifest sha256:002bf6bd594a59d94df346b60f7e57f5a190532575245eed985620c3fd3f0a08 0.1s done
+#21 exporting config sha256:6789f0867af5f3e94e7ffad63478c1994bec9b359bd97d868aec64dac0d3ab4e 0.1s done
+#21 exporting attestation manifest sha256:602945a429d1d40ddb9fc7274703fbcfb9d776c603b867ddb7fae6f99b37a552 0.2s done
+#21 exporting manifest list sha256:a39702c60c654d892ec778785ffc52adc377767002e8454e5f5c4f3e47ba8d20 0.1s done
+#21 naming to docker.io/library/dfsha5-cn1:latest 0.0s done
+#21 unpacking to docker.io/library/dfsha5-cn1:latest 0.2s done
+#21 DONE 1.1s
+
+#22 [dn2] exporting to image
+#22 exporting layers 0.2s done
+#22 exporting manifest sha256:3ce41c805e7af8b1b2a0e62ee3d40ea762241f90efcf91288996096e8910f864 0.1s done
+#22 exporting config sha256:aba7088442bdf6cec2e5d359c2972dbfa1dc6d10cdd44a5a2724fe3994b76235 0.1s done
+#22 exporting attestation manifest sha256:6aef857aff785da7cb6af2f10016e5f549f73ef78f70faf8c2624f63012045a7 0.2s done
+#22 exporting manifest list sha256:b0180b42b6ec4c5b71fd4b6f71e40968f5f085c6ca42f0369e5f1eecf075acce 0.1s done
+#22 naming to docker.io/library/dfsha5-dn2:latest 0.0s done
+#22 unpacking to docker.io/library/dfsha5-dn2:latest 0.2s done
+#22 DONE 1.1s
+
+#23 [dn4] resolving provenance for metadata file
+#23 DONE 0.4s
+
+#24 [repair] resolving provenance for metadata file
+#24 DONE 0.4s
+
+#25 [dn2] resolving provenance for metadata file
+#25 DONE 0.3s
+
+#26 [maintenance] resolving provenance for metadata file
+#26 DONE 0.3s
+
+#27 [dn3] resolving provenance for metadata file
+#27 DONE 0.3s
+
+#28 [cn2] resolving provenance for metadata file
+#28 DONE 0.2s
+
+#29 [cn3] resolving provenance for metadata file
+#29 DONE 0.1s
+
+#30 [dn1] resolving provenance for metadata file
+#30 DONE 0.1s
+
+#31 [cn1] resolving provenance for metadata file
+#31 DONE 0.0s
+ Image dfsha5-cn1 Built
+ Image dfsha5-cn2 Built
+ Image dfsha5-dn1 Built
+ Image dfsha5-dn2 Built
+ Image dfsha5-dn3 Built
+ Image dfsha5-maintenance Built
+ Image dfsha5-dn4 Built
+ Image dfsha5-repair Built
+ Image dfsha5-cn3 Built
+PKI preparada. Conservar runtime; no compartir claves ni subirlas a Git.
+ Container dfsha5-etcd3-1 Running
+ Container dfsha5-etcd1-1 Running
+ Container dfsha5-etcd2-1 Running
+ Container dfsha5-dn2-1 Recreate
+ Container dfsha5-dn3-1 Recreate
+ Container dfsha5-cn3-1 Recreate
+ Container dfsha5-repair-1 Recreate
+ Container dfsha5-cn2-1 Recreate
+ Container dfsha5-dn1-1 Recreate
+ Container dfsha5-dn4-1 Recreate
+ Container dfsha5-cn1-1 Recreate
+ Container dfsha5-dn2-1 Recreated
+ Container dfsha5-dn4-1 Recreated
+ Container dfsha5-dn1-1 Recreated
+ Container dfsha5-cn2-1 Recreated
+ Container dfsha5-cn1-1 Recreated
+ Container dfsha5-dn3-1 Recreated
+ Container dfsha5-cn3-1 Recreated
+ Container dfsha5-gateway-1 Running
+ Container dfsha5-repair-1 Recreated
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-dn4-1 Starting
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-cn2-1 Starting
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-dn3-1 Starting
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-cn1-1 Starting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-cn3-1 Starting
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-dn1-1 Starting
+ Container dfsha5-repair-1 Starting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-dn2-1 Starting
+ Container dfsha5-dn4-1 Started
+ Container dfsha5-cn2-1 Started
+ Container dfsha5-repair-1 Started
+ Container dfsha5-dn3-1 Started
+ Container dfsha5-dn2-1 Started
+ Container dfsha5-dn1-1 Started
+ Container dfsha5-cn3-1 Started
+ Container dfsha5-cn1-1 Started
+ Container dfsha5-cn2-1 Waiting
+ Container dfsha5-cn3-1 Waiting
+ Container dfsha5-cn1-1 Waiting
+ Container dfsha5-cn2-1 Healthy
+ Container dfsha5-cn1-1 Healthy
+ Container dfsha5-cn3-1 Healthy
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-cn3-1 Waiting
+ Container dfsha5-gateway-1 Waiting
+ Container dfsha5-dn4-1 Waiting
+ Container dfsha5-cn1-1 Waiting
+ Container dfsha5-dn2-1 Waiting
+ Container dfsha5-dn1-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-dn3-1 Waiting
+ Container dfsha5-repair-1 Waiting
+ Container dfsha5-cn2-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-dn1-1 Healthy
+ Container dfsha5-cn3-1 Healthy
+ Container dfsha5-dn3-1 Healthy
+ Container dfsha5-dn2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-dn4-1 Healthy
+ Container dfsha5-gateway-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-cn2-1 Healthy
+ Container dfsha5-cn1-1 Healthy
+ Container dfsha5-repair-1 Healthy
+ Container dfsha5-gateway-1 Restarting
+ Container dfsha5-gateway-1 Started
+ Container dfsha5-cn1-run-3e67428068c4 Creating
+ Container dfsha5-cn1-run-3e67428068c4 Created
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-8.3.5, pluggy-1.7.0
+rootdir: /app
+plugins: anyio-4.16.0
+collected 48 items
+
+tests/test_api.py ............                                           [ 25%]
+tests/test_block_merge.py ....                                           [ 33%]
+tests/test_clock_skew.py ...                                             [ 39%]
+tests/test_etcd_adapter.py ...                                           [ 45%]
+tests/test_gc.py ....                                                    [ 54%]
+tests/test_gc_probe.py .                                                 [ 56%]
+tests/test_repair.py ....                                                [ 64%]
+tests/test_security.py ....                                              [ 72%]
+tests/test_sessions.py ......                                            [ 85%]
+tests/test_transfers.py .......                                          [100%]
+
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/starlette/testclient.py:37
+  /usr/local/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 48 passed, 1 warning in 9.36s =========================
+{"status":"ready"}
+Iniciando subida de 1024 MiB con TLS y replicas...
+Subida completa en 55.38 s; verificando descarga...
+{
+  "large_mib": 1024,
+  "environment": "Docker local, red TLS/mTLS",
+  "mtls_without_certificate_rejected": true,
+  "rf3_disjoint_merge_and_same_block_conflict": true,
+  "bytes": 1073741824,
+  "blocks": 256,
+  "sha256": "4890d76fcfb17558cb4298d68e752e733bf0f2ce2dbea31760c3a01f3fae8475",
+  "put_s": 55.38044071600052,
+  "get_s": 31.05821577200004,
+  "verified": true
+}
+ dfsha5-cn2-1 Copying dfsha5-cn2-1:/tmp/dfsha-evidence/full.json to evidencias/full.json
+ dfsha5-cn2-1 Copied dfsha5-cn2-1:/tmp/dfsha-evidence/full.json to evidencias/full.json
+4 MiB, 1 clientes, repetici├│n 0: 0.700 s
+4 MiB, 1 clientes, repetici├│n 1: 0.613 s
+4 MiB, 1 clientes, repetici├│n 2: 0.659 s
+4 MiB, 2 clientes, repetici├│n 0: 0.670 s
+4 MiB, 2 clientes, repetici├│n 1: 0.682 s
+4 MiB, 2 clientes, repetici├│n 2: 0.915 s
+16 MiB, 1 clientes, repetici├│n 0: 1.534 s
+16 MiB, 1 clientes, repetici├│n 1: 1.576 s
+16 MiB, 1 clientes, repetici├│n 2: 1.692 s
+16 MiB, 2 clientes, repetici├│n 0: 2.201 s
+16 MiB, 2 clientes, repetici├│n 1: 2.248 s
+16 MiB, 2 clientes, repetici├│n 2: 2.207 s
+Resultados: /tmp/dfsha-evidence/normal.csv
+ dfsha5-cn2-1 Copying dfsha5-cn2-1:/tmp/dfsha-evidence/normal.csv to evidencias/benchmark-normal.csv
+ dfsha5-cn2-1 Copied dfsha5-cn2-1:/tmp/dfsha-evidence/normal.csv to evidencias/benchmark-normal.csv
+ Container dfsha5-dn1-1 Stopping
+ Container dfsha5-dn1-1 Stopped
+4 MiB, 1 clientes, repetici├│n 0: 0.688 s
+4 MiB, 1 clientes, repetici├│n 1: 0.571 s
+4 MiB, 1 clientes, repetici├│n 2: 0.649 s
+4 MiB, 2 clientes, repetici├│n 0: 4.694 s
+4 MiB, 2 clientes, repetici├│n 1: 4.714 s
+4 MiB, 2 clientes, repetici├│n 2: 0.772 s
+16 MiB, 1 clientes, repetici├│n 0: 13.484 s
+16 MiB, 1 clientes, repetici├│n 1: 1.547 s
+16 MiB, 1 clientes, repetici├│n 2: 9.560 s
+16 MiB, 2 clientes, repetici├│n 0: 9.608 s
+16 MiB, 2 clientes, repetici├│n 1: 13.636 s
+16 MiB, 2 clientes, repetici├│n 2: 9.534 s
+Resultados: /tmp/dfsha-evidence/degraded.csv
+ dfsha5-cn2-1 Copying dfsha5-cn2-1:/tmp/dfsha-evidence/degraded.csv to evidencias/benchmark-degradado.csv
+ dfsha5-cn2-1 Copied dfsha5-cn2-1:/tmp/dfsha-evidence/degraded.csv to evidencias/benchmark-degradado.csv
+ Container dfsha5-etcd3-1 Running
+ Container dfsha5-etcd2-1 Running
+ Container dfsha5-etcd1-1 Running
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-dn1-1 Starting
+ Container dfsha5-dn1-1 Started
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-dn1-1 Waiting
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-dn1-1 Healthy
+[
+  {
+    "condition": "dn1_detenido",
+    "size_mib": 4,
+    "clients": 1,
+    "samples": 3,
+    "repeats": 3,
+    "put_median_s": 0.4046751290006796,
+    "get_median_s": 0.20950411199919472,
+    "combined_median_mib_s": 12.322716428982762,
+    "round_min_s": 0.5705475249997107,
+    "round_max_s": 0.6875716619997547
+  },
+  {
+    "condition": "dn1_detenido",
+    "size_mib": 4,
+    "clients": 2,
+    "samples": 6,
+    "repeats": 3,
+    "put_median_s": 0.5097762429986687,
+    "get_median_s": 0.2225447475002511,
+    "combined_median_mib_s": 3.4088679715471235,
+    "round_min_s": 0.7718425300008676,
+    "round_max_s": 4.713889130000098
+  },
+  {
+    "condition": "dn1_detenido",
+    "size_mib": 16,
+    "clients": 1,
+    "samples": 3,
+    "repeats": 3,
+    "put_median_s": 8.903584443,
+    "get_median_s": 0.5563265920009144,
+    "combined_median_mib_s": 3.3473140883290613,
+    "round_min_s": 1.546550068000215,
+    "round_max_s": 13.483706842000174
+  },
+  {
+    "condition": "dn1_detenido",
+    "size_mib": 16,
+    "clients": 2,
+    "samples": 6,
+    "repeats": 3,
+    "put_median_s": 6.879550856499918,
+    "get_median_s": 0.5699509164996925,
+    "combined_median_mib_s": 6.66137937789217,
+    "round_min_s": 9.534179271999164,
+    "round_max_s": 13.63574059200073
+  },
+  {
+    "condition": "normal",
+    "size_mib": 4,
+    "clients": 1,
+    "samples": 3,
+    "repeats": 3,
+    "put_median_s": 0.43186770400097885,
+    "get_median_s": 0.22696103699854575,
+    "combined_median_mib_s": 12.133380375835657,
+    "round_min_s": 0.6130655630004185,
+    "round_max_s": 0.6998781239999516
+  },
+  {
+    "condition": "normal",
+    "size_mib": 4,
+    "clients": 2,
+    "samples": 6,
+    "repeats": 3,
+    "put_median_s": 0.45732800049972866,
+    "get_median_s": 0.22208178100026998,
+    "combined_median_mib_s": 23.460018307002162,
+    "round_min_s": 0.6701466849990538,
+    "round_max_s": 0.9152145640000526
+  },
+  {
+    "condition": "normal",
+    "size_mib": 16,
+    "clients": 1,
+    "samples": 3,
+    "repeats": 3,
+    "put_median_s": 0.9979685520011117,
+    "get_median_s": 0.589635537000504,
+    "combined_median_mib_s": 20.300488799480494,
+    "round_min_s": 1.533676450000712,
+    "round_max_s": 1.6920932499997434
+  },
+  {
+    "condition": "normal",
+    "size_mib": 16,
+    "clients": 2,
+    "samples": 6,
+    "repeats": 3,
+    "put_median_s": 1.50378287500007,
+    "get_median_s": 0.7067386099997748,
+    "combined_median_mib_s": 28.998143252969534,
+    "round_min_s": 2.20135316500091,
+    "round_max_s": 2.2477698540005804
+  }
+]
+ Container dfsha5-gateway-1 Stopping
+ Container dfsha5-repair-1 Stopping
+ Container dfsha5-gateway-1 Stopped
+ Container dfsha5-cn3-1 Stopping
+ Container dfsha5-cn1-1 Stopping
+ Container dfsha5-cn2-1 Stopping
+ Container dfsha5-cn1-1 Stopped
+ Container dfsha5-cn3-1 Stopped
+ Container dfsha5-cn2-1 Stopped
+ Container dfsha5-repair-1 Stopped
+dn1
+dn2
+dn3
+dn4
+etcd1
+etcd2
+etcd3
+ Container dfsha5-etcd2-1 Running
+ Container dfsha5-etcd3-1 Running
+ Container dfsha5-etcd1-1 Running
+ Container dfsha5-dn1-1 Running
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-dn1-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-dn1-1 Healthy
+82c63d54b2a53e0754816c53bc93997ccdd21d96f041a04ef1fd00a1eadced35
+Objeto de prueba GC creado: 82c63d54b2a53e0754816c53bc93997ccdd21d96f041a04ef1fd00a1eadced35
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+Esperando que terminen las capacidades en vuelo...
+ Container dfsha5-maintenance-run-a89433f13f99 Creating
+ Container dfsha5-maintenance-run-a89433f13f99 Created
+{
+  "mode": "execute",
+  "retained_blocks": 1063,
+  "obsolete_manifests": 0,
+  "expired_records": 0,
+  "copies_to_delete": 1,
+  "bytes_to_free": 64
+}
+OK: GC elimin├│ el objeto sint├®tico sin referencias
+ Container dfsha5-etcd3-1 Running
+ Container dfsha5-etcd1-1 Running
+ Container dfsha5-etcd2-1 Running
+ Container dfsha5-dn1-1 Running
+ Container dfsha5-dn4-1 Running
+ Container dfsha5-dn3-1 Running
+ Container dfsha5-dn2-1 Running
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-cn3-1 Starting
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-cn2-1 Starting
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-cn1-1 Starting
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-repair-1 Starting
+ Container dfsha5-cn3-1 Started
+ Container dfsha5-cn1-1 Started
+ Container dfsha5-cn2-1 Started
+ Container dfsha5-cn1-1 Waiting
+ Container dfsha5-cn2-1 Waiting
+ Container dfsha5-cn3-1 Waiting
+ Container dfsha5-repair-1 Started
+ Container dfsha5-cn1-1 Healthy
+ Container dfsha5-cn2-1 Healthy
+ Container dfsha5-cn3-1 Healthy
+ Container dfsha5-gateway-1 Starting
+ Container dfsha5-gateway-1 Started
+ Container dfsha5-dn2-1 Waiting
+ Container dfsha5-dn4-1 Waiting
+ Container dfsha5-dn1-1 Waiting
+ Container dfsha5-repair-1 Waiting
+ Container dfsha5-etcd3-1 Waiting
+ Container dfsha5-etcd1-1 Waiting
+ Container dfsha5-cn3-1 Waiting
+ Container dfsha5-cn1-1 Waiting
+ Container dfsha5-cn2-1 Waiting
+ Container dfsha5-gateway-1 Waiting
+ Container dfsha5-etcd2-1 Waiting
+ Container dfsha5-dn3-1 Waiting
+ Container dfsha5-repair-1 Healthy
+ Container dfsha5-etcd2-1 Healthy
+ Container dfsha5-dn3-1 Healthy
+ Container dfsha5-cn1-1 Healthy
+ Container dfsha5-dn4-1 Healthy
+ Container dfsha5-dn1-1 Healthy
+ Container dfsha5-dn2-1 Healthy
+ Container dfsha5-etcd1-1 Healthy
+ Container dfsha5-gateway-1 Healthy
+ Container dfsha5-cn2-1 Healthy
+ Container dfsha5-etcd3-1 Healthy
+ Container dfsha5-cn3-1 Healthy
+PRUEBAS RF3, TLS/mTLS, archivo grande, benchmark y GC terminadas. Revisar los informes y CSV antes de declarar cumplimiento.
+Acceso: https://127.0.0.1:18443/docs. Usar la CA runtime/trust/ca.crt; no desactivar la verificacion TLS.
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20261108103259
+**********************
